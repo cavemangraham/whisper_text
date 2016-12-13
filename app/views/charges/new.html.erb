@@ -10,6 +10,10 @@
     </label>
   </article>
 
+  <script type="text/javascript">
+    Stripe.setPublishableKey('STRIPE_TEST_PUBLISHABLE_KEY');
+  </script>
+
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="An anoynmous text message."
