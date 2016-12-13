@@ -5,7 +5,7 @@
   <div class="col-sm-6 col-sm-offset-3 text-center"
     <form action="/whispers" method="POST">
         <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
-          <%= label_tag(:recipient, "Send to:") %>
+          <%= label_tag(:recipient, "Text to:") %>
           <%= text_field_tag(:recipient) %>
           <br>
           <%= label_tag(:message, "Message:") %>
@@ -28,7 +28,7 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="text-center"><h2>FAQ</h2></div>
-    <p><strong>Can I use this to tell my loved ones to go fuck themselves?</strong></p>
+    <p><strong>Can I use this to secretly tell my loved ones to go fuck themselves?</strong></p>
     <p>Duh. Thats like the main point, homie.</p>
     <p><strong>Is this legal?</strong></p>
     <p>Aw geez, Rick. I really hope so. No death threats please. Save that shit for creepy letters written in blood.</p>
