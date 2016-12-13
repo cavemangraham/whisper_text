@@ -11,7 +11,7 @@
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Settings[Rails.env]['stripe']['publishable_key'] %>"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="An anoynmous text message."
           data-amount="100"
           data-locale="auto"></script>
