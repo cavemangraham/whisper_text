@@ -9,7 +9,7 @@
           <%= text_field_tag(:recipient) %>
           <br>
           <%= label_tag(:message, "Message:") %>
-          <%= text_field_tag(:message) %>
+          <%= text_field_tag(:message, nil, :maxlength => 150) %>
           <br>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -35,7 +35,7 @@
     <p><strong>This FAQ is garbage.</strong></p>
     <p>That isn't even a question!</p>
     <p><strong>Who built this?</strong></p>
-    <p>Trust me, you don't wanna know. It's whooooole can of worms.</p>
+    <p>Trust me, you don't wanna know. It's a whooooole can of worms.</p>
     <p><strong>Anything else we should know?</strong></p>
     <p>Ummm don't write anything longer than a tweet(160 characters). Please use this for dastardly schemes, vicious confessions, and brutal insults.</p>
 
