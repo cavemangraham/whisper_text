@@ -1,9 +1,21 @@
 <h1>Whisper Landing</h1>
 
+<form action="/whispers" method="POST">
+
     <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
       <%= label_tag(:recipient, "Send to:") %>
       <%= text_field_tag(:recipient) %>
       <%= label_tag(:message, "Message:") %>
       <%= text_field_tag(:message) %>
-      <%= submit_tag("Send Whisper") %>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_sSY0kO2WHAbMMkP3zssgmPUB"
+        data-amount="100"
+        data-name="Stripe.com"
+        data-description="Anonymous Text Message"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto"
+        data-zip-code="false">
+      </script>
     <% end %>
+</form>

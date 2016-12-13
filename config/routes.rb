@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   post 'whispers/send_text' => 'whispers#send_text'
 
-  resources :charges
+  post 'whispers' => 'whispers#send_text'
 
 end
