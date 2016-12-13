@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
-  post 'twilio/send_text' => 'twilio#send_text'
+  root 'whisper#landing'
+
+  post 'whisper/send_text' => 'whisper#send_text'
 
 end

@@ -1,4 +1,4 @@
-class TwilioController < ApplicationController
+class WhisperController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def send_text
