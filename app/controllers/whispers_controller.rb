@@ -23,7 +23,7 @@ class WhispersController < ApplicationController
 
       client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
 
-      message = client.messages.create from: Rails.application.secrets.twilio_number, to: recipient, body: message
+      message = client.messages.create from: Rails.application.secrets.twilio_number, to: recipient, body: message + "\n-whispe.rs"
 
       redirect_to root_path, :flash => { notice: "Success! Message Sent!"}
 
