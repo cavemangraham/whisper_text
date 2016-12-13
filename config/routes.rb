@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'whisper#landing'
+  root 'whispers#new'
 
-  post 'whisper/send_text' => 'whisper#send_text'
+  post 'whispers/send_text' => 'whispers#send_text'
 
 end

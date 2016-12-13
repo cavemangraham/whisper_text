@@ -1,0 +1,9 @@
+<h1>Whisper Landing</h1>
+
+    <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
+      <%= label_tag(:recipient, "Send to:") %>
+      <%= text_field_tag(:recipient) %>
+      <%= label_tag(:message, "Message:") %>
+      <%= text_field_tag(:message) %>
+      <%= submit_tag("Send Whisper") %>
+    <% end %>
