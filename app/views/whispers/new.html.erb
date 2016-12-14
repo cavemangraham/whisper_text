@@ -1,16 +1,17 @@
+<nav class="navbar navbar-default">
+  <a class="navbar-brand" href="#">whispe.rs</a>
+</nav>
 
-<div class="text-center"><h1>Text Anything to Anyone, Anonymously</h1></div>
+<div class="text-center"><h1>Anything to Anyone, Anonymously.</h1></div><br>
 
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3 text-center"
     <form action="/whispers" method="POST">
         <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
-          <%= label_tag(:recipient, "Text to:") %>
-          <%= text_field_tag(:recipient) %>
+          <%= text_field_tag(:recipient, nil, class: "form-control", placeholder: "Target's Phone Number") %>
           <br>
-          <%= label_tag(:message, "Message:") %>
-          <%= text_field_tag(:message, nil, :maxlength => 150) %>
-          <br>
+          <%= text_area_tag(:message, nil, class: "form-control", :maxlength => 160, placeholder: "Your Message", :rows => 3) %>
+          <h3>1 USD = 1 TXT</h3>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="pk_live_TXtxWtQ5QadZISCjM6fShR3X"
