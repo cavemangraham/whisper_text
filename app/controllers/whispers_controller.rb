@@ -5,7 +5,7 @@ class WhispersController < ApplicationController
 
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here: https://dashboard.stripe.com/account/apikeys
-    Stripe.api_key = "sk_test_dWUzVY1kMVTol9gMH9jjg4GC"
+    Stripe.api_key = Rails.application.secrets.stripe_secret
 
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
@@ -18,17 +18,17 @@ class WhispersController < ApplicationController
         :amount => 100, # Amount in cents
         :currency => "usd",
         :source => token,
-        :description => "Example charge"
+        :description => "One Anonymous Text"
       )
 
       client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
 
-      message = client.messages.create from: Rails.application.secrets.twilio_number, to: recipient, body: message + "\n-whispe.rs"
+      message = client.messages.create from: Rails.application.secrets.twilio_number, to: recipient, body: message
 
       redirect_to root_path, :flash => { notice: "Success! Message Sent!"}
 
     rescue Stripe::CardError => e
-      redirect_to root_path, :flash => { alert: "Card Declined. Please try again."}
+      redirect_to root_path, :flash => { alert: "Card Error. Please try again."}
     end
   end
 end
