@@ -17,6 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media (max-width: 380px) {
+    .typer {
+        font-size: 35px !important;
+    }
+}
+
 .typed-cursor{
   font-size: 40px;
   opacity: 1;
