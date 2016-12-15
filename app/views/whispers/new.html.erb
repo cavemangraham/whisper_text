@@ -3,6 +3,16 @@
     <li class="col-sm-6 col-sm-offset-3" style="padding: 0; font-size:45px;text-decoration: none; color: #30a2e4;">Whispe.rs</li>
   </ul>
 </nav>
+
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>" style="width:100%; border-radius:0px;">
+      <button class="close" data-dismiss="alert">×</button>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <span class="typer" id="typer" style="font-size:40px;"></span>
@@ -43,7 +53,7 @@
     <p><strong>I don't trust you with my payment information.</strong></p>
     <p>Still not a question, but that's why the entire payment process is handled by Stripe. They're kinda like pros.</p>
     <p><strong>Can anyone find out what I send?</strong></p>
-    <p>Nope. Chill, bro. The message data is sent and not saved.</p>
+    <p>Nope. Chill, bro. The message data is sent and then the logs are deleted so there is no trace.</p>
     <p><strong>Anything else I should know?</strong></p>
     <p>Ummm don't write anything longer than a tweet(160 characters). This tool is intended for use exclusively in dastardly schemes, vicious confessions, and brutal insults.</p>
     </div>
