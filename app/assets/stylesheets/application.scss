@@ -17,14 +17,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 380px) {
+@media (max-width: 770px) {
     .typer {
         font-size: 35px !important;
     }
+    .form {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .faq {
+        width: 95%;
+        margin: 0 auto;
+    }
+
 }
 
 .typed-cursor{
   font-size: 40px;
+  color: #30a2e4;
   opacity: 1;
   -webkit-animation: blink 0.9s infinite;
   -moz-animation: blink 0.9s infinite;

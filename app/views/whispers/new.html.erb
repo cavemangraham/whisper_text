@@ -1,13 +1,12 @@
 <nav class="navbar navbar-default" style="width:100%; background: #000000;border-radius:0px; margin: 0;">
   <ul style="list-style: none; padding: 0; margin: 0;">
-    <li class="col-sm-6 col-sm-offset-3" style="padding: 0; font-size:45px;text-decoration: none; color: #30a2e4;">Whispe.rs</li>
+    <li class="col-sm-6 col-sm-offset-3 text-center" style="padding: 0; font-size:45px; text-decoration: none; color: #ffffff;">Whispe.rs</li>
   </ul>
 </nav>
 
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
-    <div class="alert alert-dismissible alert-<%= name == "notice" ? "success" : "danger" %>" style="width:100%; border-radius:0px;">
-      <button class="close" data-dismiss="alert">×</button>
+    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>" style="width:100%; border-radius:0px; padding: 5px;">
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
   <% end %>
@@ -15,11 +14,11 @@
 
 <div class="row" style="margin: 30px 0 0 0;">
   <div class="col-sm-6 col-sm-offset-3">
-    <span class="typer" id="typer" style="font-size:40px;"></span>
+    <span class="typer" style="font-size:40px; color: #30a2e4;"></span>
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3 text-center">
+  <div class="col-sm-6 col-sm-offset-3 text-center form">
     <form action="/whispers" method="POST" style="margin: 25px 0 40px 0;">
         <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
           <%= text_field_tag(:recipient, nil, class: "form-control", placeholder: "Target's Phone Number") %>
@@ -42,7 +41,7 @@
 </div>
 <hr />
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-sm-6 col-sm-offset-3 faq">
     <div class="text-center"><h2 style="font-size: 50px; color: #30a2e4;">FAQ</h2></div>
     <p style="margin: 30px 0 0 0;"><strong>Can I use this to secretly tell my loved ones to go fuck themselves?</strong></p>
     <p>Duh. Thats like the main point, homie.</p>
@@ -62,7 +61,7 @@
 
 <div id="footer" style="margin: 40px 0 0 0;">
   <div class="container text-center" style="background: #000000; width: 100%;">
-    <p style="color: #30a2e4; padding: 5px 0 0 0;">Whispe.rs 2016 &copy;</a></p>
+    <p style="color: #fff; padding: 5px 0 0 0;">Whispe.rs 2016 &copy;</a></p>
   </div>
 </div>
 
