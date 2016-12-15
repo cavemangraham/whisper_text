@@ -25,6 +25,10 @@ class WhispersController < ApplicationController
 
       message = client.messages.create from: Rails.application.secrets.twilio_number, to: recipient, body: message
 
+      kill_message = client.messages.get(message.sid)
+
+      kill_message.redact
+
       redirect_to root_path, :flash => { notice: "Success! Message Sent!"}
 
     rescue Stripe::CardError => e
