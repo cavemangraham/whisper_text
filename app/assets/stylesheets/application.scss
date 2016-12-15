@@ -32,6 +32,17 @@
 
 }
 
+@media (max-width: 340px) {
+    .typer {
+        font-size: 33px !important;
+    }
+
+}
+
+#site_wrapper {
+  overflow-x: hidden;
+}
+
 .typed-cursor{
   font-size: 40px;
   color: #30a2e4;
