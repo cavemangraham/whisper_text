@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   post 'whispers' => 'whispers#send_text'
 
+  get 'whispers/privacy', :as => 'privacy_page'
+
 end

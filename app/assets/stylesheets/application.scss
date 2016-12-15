@@ -17,9 +17,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 770px) {
+@media (max-width: 800px) {
     .typer {
-        font-size: 35px !important;
+        font-size: 40px !important;
     }
     .form {
         width: 95%;
@@ -37,6 +37,34 @@
         font-size: 33px !important;
     }
 
+}
+
+a:link {
+  color:#fff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  font-size: 18px;
+  margin: 15px 0 15px 0;
+}
+
+.stripe-button-el{
+  span {
+    padding: 0px 30px 0px 30px !important;
+  }
 }
 
 #site_wrapper {
