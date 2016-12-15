@@ -1,19 +1,19 @@
-<nav class="navbar navbar-default" style="width:100%; background: #000000;border-radius:0px;">
-  <ul style="list-style: none; padding:0;margin:0;">
+<nav class="navbar navbar-default" style="width:100%; background: #000000;border-radius:0px; margin: 0;">
+  <ul style="list-style: none; padding: 0; margin: 0;">
     <li class="col-sm-6 col-sm-offset-3" style="padding: 0; font-size:45px;text-decoration: none; color: #30a2e4;">Whispe.rs</li>
   </ul>
 </nav>
 
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
-    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>" style="width:100%; border-radius:0px;">
+    <div class="alert alert-dismissible alert-<%= name == "notice" ? "success" : "danger" %>" style="width:100%; border-radius:0px;">
       <button class="close" data-dismiss="alert">×</button>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
   <% end %>
 <% end %>
 
-<div class="row">
+<div class="row" style="margin: 30px 0 0 0;">
   <div class="col-sm-6 col-sm-offset-3">
     <span class="typer" id="typer" style="font-size:40px;"></span>
   </div>
