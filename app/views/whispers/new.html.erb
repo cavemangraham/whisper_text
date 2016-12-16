@@ -23,9 +23,9 @@
   <div class="col-sm-6 col-sm-offset-3 text-center form">
     <form action="/whispers" method="POST" style="margin: 25px 0 60px 0;">
         <%= form_tag(controller: "whispers", action: "send_text", method: "post") do %>
-          <%= text_field_tag(:recipient, nil, class: "form-control", placeholder: "Target's Phone Number") %>
+          <%= text_field_tag(:recipient, nil, class: "form-control", placeholder: "Target's Phone Number", :onclick => "ga(‘send’, ‘Form’, ‘Target_Phone’, ‘Click’);") %>
           <br>
-          <%= text_area_tag(:message, nil, class: "form-control", :maxlength => 160, placeholder: "Your Message", :rows => 3) %>
+          <%= text_area_tag(:message, nil, class: "form-control", :maxlength => 160, placeholder: "Your Message", :rows => 3, :onclick => "ga(‘send’, ‘Form’, ‘Message’, ‘Click’);") %>
           <h3 style="margin: 40px 0 20px 0;">1 USD = 1 TXT</h3>
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -85,5 +85,11 @@
       loop: false,
       cursorChar: "|",
     });
+  });
+
+  document.body.addEventListener("click", function (event) {
+    if (event.target.previousElementSibling.classList.contains("stripe-button")) {
+      ga(‘send’, ‘Form’, ‘Payment_Button’, ‘Click’, {‘NonInteraction’: 1});
+    }
   });
 </script>
