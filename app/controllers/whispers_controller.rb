@@ -35,4 +35,17 @@ class WhispersController < ApplicationController
       redirect_to root_path, :flash => { alert: "Card Error. Please try again."}
     end
   end
+
+  def reply
+    from_number = params["From"]
+
+    client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
+
+    message_reply = client.messages.create(
+      from: Rails.application.secrets.twilio_number,
+      to: from_number,
+      body: "www.whispe.rs"
+    )
+  end
+
 end
