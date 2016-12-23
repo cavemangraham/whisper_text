@@ -11,16 +11,15 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="#learn">Learn More</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="mailto:hellowhisperscontact@gmail.com">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
 <div>
-
-  <div id="survey-box" class="col-sm-6 col-sm-offset-3"></div>
 
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
@@ -62,11 +61,11 @@
           </div>
           <div class="row">
             <div class="col-xs-12" style="margin: 50px 0 50px 0">
-              <%= select_tag(:message, "<option value='Merry Christmas, ya filthy animal!' selected='selected'>Merry Christmas, ya filthy animal 🎄</option><option value='You're kind of a poopy head!'>You're kind of a poopy head 💩</option><option value='I fart in your general direction!'>I fart in your general direction 💨</option><option value='Your mother was a hamster and your father smelled of elderberries'>Your mother was a hamster and your father smelled of elderberries 🍇</option><option>You stuck up, scruffy-looking nerfherder!</option><option value='Live long and prosper.'>Live long and prosper 🖖</option>".html_safe, class: "form-control") %>
+              <%= select_tag(:message, "<option value='Merry Christmas, ya filthy animal!' selected='selected'>Merry Christmas, ya filthy animal 🎄</option><option value='You're kind of a poopy head!'>You're kind of a poopy head 💩</option><option value='You just lost The Game :)'>You just lost The Game 👌</option><option value='I fart in your general direction!'>I fart in your general direction 💨</option><option value='Your mother was a hamster and your father smelled of elderberries'>Your mother was a hamster and your father smelled of elderberries 🍇</option><option value='Live long and prosper.'>Live long and prosper 🖖</option><option value='Guess who sent this and I will buy you a coffee!'>Guess who sent this and I will buy you a coffee ☕</option></option><option value='Guess who sent this and I will buy you a beer!'>Guess who sent this and I will buy you a beer 🍻</option>".html_safe, class: "form-control") %>
             </div>
           </div>
 
-            <%= submit_tag("Send Message") %>
+            <%= submit_tag("Send Message", class: "btn btn-lg btn-success") %>
           <% end %>
         </form>
     </div>
@@ -83,37 +82,56 @@
     </div>
   </div>
 <hr />
-<div class="row" style="margin: 60px 0 0 0;">
-  <div class="text-center"><h2 style="font-size: 40px; color: #30a2e4;">How Does It Work?</h2></div>
+<div class="row" id="learn" style="padding: 100px 0 100px 0;">
+  <div class="text-center"><h2 style="font-size: 55px; color: #30a2e4;">How Does It Work?</h2></div>
 </div>
-<div class="row" style="margin: 60px 0 100px 0;">
+
+<div class="row" style="margin: 50px 0 250px 0;">
   <div class="col-sm-4 text-center">
-    <h2 style="font-size: 60px; margin: 30px 0;"><%= fa_icon "pencil" %></h2>
+    <h2 style="font-size: 90px; margin: 30px 0;"><%= fa_icon "pencil" %></h2>
     <p style="width: 200px; margin: 0 auto;">Input your friend's phone number and wireless carrier.</p>
   </div>
   <div class="col-sm-4 text-center">
-    <h2 style="font-size: 60px; margin: 30px 0;"><%= fa_icon "comment" %></h2>
+    <h2 style="font-size: 90px; margin: 30px 0;"><%= fa_icon "comment" %></h2>
     <p style="width: 200px; margin: 0 auto;">Pick from our selection of goofy phrases to send.</p>
   </div>
   <div class="col-sm-4 text-center">
-    <h2 style="font-size: 60px; margin: 30px 0;"><%= fa_icon "heart" %></h2>
+    <h2 style="font-size: 90px; margin: 30px 0;"><%= fa_icon "heart" %></h2>
     <p style="width: 200px; margin: 0 auto;">Your message is delivered to the phone number specified.</p>
   </div>
 </div>
 <hr />
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3 faq">
-    <div class="text-center"><h2 style="font-size: 40px; color: #30a2e4;">FAQ</h2></div>
-    <p style="margin-top: 30px;"><strong>What is this thing?</strong></p>
-    <p>Whispe.rs is an online tool that lets you send a silly anonymous message to your friends and family for free. Send something Naughty or Nice. The choice is yours!</p>
-    <p><strong>Can I use this to secretly tell my loved ones to go fuck themselves?</strong></p>
-    <p>Duh. Thats like the main point, homie.</p>
-    <p><strong>?</strong></p>
-    <p>!</p>
-    <p><strong>What are these surveys?</strong></p>
-    <p>The surveys are short, sweet, and opinion-based. They won't ask you for any of your personal information and do not have any access to the phone numbers submitted.</p>
-    <p><strong>Anything else I should know?</strong></p>
-    <p>Nope. Try it out and have fun!</p>
+    <div class="text-center" id="faq"><h2 style="font-size: 60px; color: #30a2e4; padding: 80px 0 0 0;">FAQ</h2></div>
+    <div class="faq-question">
+      <p><strong>What is this thing?</strong></p>
+      <p>Whispe.rs is an online tool that lets you send silly anonymous messages to your friends and family for FREE.</p>
+    </div>
+    <div class="faq-question">
+      <p><strong>Will they know who sent the message?</strong></p>
+      <p>No. They will know the message was sent from this website and the sender knew their number but that is all.</p>
+    </div>
+    <div class="faq-question">
+      <p><strong>How does this work?</strong></p>
+      <p>Whispe.rs sends the message using email to an SMS gateway that is provided by most major wireless carriers. The gateway turns the email into a text that is then delivered foe you anonymously.</p>
+    </div>
+    <div class="faq-question">
+      <p><strong>Why do I need to know their wireless carrier?</strong></p>
+      <p>We need to know the wireless carrier of the number in order to send it to the right SMS gateway. If you choose the wrong carrier the message will not be delivered properly.</p>
+    </div>
+    <div class="faq-question">
+      <p><strong>Is it safe to input a phone number online?</strong></p>
+      <p>Yes. None of the numbers are stored on our server and the form submission is protected by cryptographic SSL methods.</p>
+    </div>
+    <!-- <div class="faq-question">
+      <p><strong>I have an idea for a funny message!</strong></p>
+      <p>Awesome! Visit our "Suggest A Message" page and read the submission guidelines. If it is entertaining and fits the tone of the site it will be added within a day or two.</p>
+    </div> -->
+    <div class="faq-question">
+      <p><strong>Anything else I should know?</strong></p>
+      <p>Nope. Try it out and have fun!</p>
+      </div>
     </div>
   </div>
 </div>
@@ -129,7 +147,7 @@
 <script>
   $(document).ready(function(){
     $(".typer").typed({
-      strings: ["Text Friends", "Make Laughs", "Try It Out Now! :D"],
+      strings: ["Text Friends", "Make Laughs", "It's Free!", "Try It Out Now! :D"],
       typeSpeed: 60,
       backSpeed: 100,
       backDelay: 1500,

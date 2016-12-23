@@ -5,7 +5,7 @@ class WhispersController < ApplicationController
 
     recipient = params[:recipient]
     carrier = params[:carrier]
-    message = "Someone Whispe.rs:\n\n" + '"' + params[:message] + '"'
+    message = "Someone Whispe.rs:\n" + '"' + params[:message] + '"'
 
     # Create the client
     easy = SMSEasy::Client.new
@@ -18,22 +18,15 @@ class WhispersController < ApplicationController
       redirect_to root_path, :flash => { alert: "An error occured. Please try again later."}
     end
 
+    @whisper = Whisper.new(:message => params[:message])
+    @whisper.save
+
+    puts Whisper.all.count
+
     redirect_to root_path, :flash => { notice: "Success! Message Sent!"}
 
     #redirect_to root_path, :flash => { alert: "Card Error. Please try again."}
 
-  end
-
-  def reply
-    from_number = params["From"]
-
-    client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
-
-    message_reply = client.messages.create(
-      from: Rails.application.secrets.twilio_number,
-      to: from_number,
-      body: "www.whispe.rs"
-    )
   end
 
 end
