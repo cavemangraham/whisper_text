@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get 'whispers/privacy', :as => 'privacy_page'
 
+  get '/.well-known/acme-challenge/8uXs6dJj7vbQZRqT8kwf6gpslBmvlbDTO14X7y9tIlA' => 'whispers#letsencrypt'
+
 end

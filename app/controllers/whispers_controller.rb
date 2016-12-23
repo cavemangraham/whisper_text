@@ -29,4 +29,7 @@ class WhispersController < ApplicationController
 
   end
 
+  def letsencrypt
+    render text: "8uXs6dJj7vbQZRqT8kwf6gpslBmvlbDTO14X7y9tIlA.F1Oaigrw6nTcOmPU71aLfy98G0-ILdvFEtsQHFpKLd4"
+  end
 end
