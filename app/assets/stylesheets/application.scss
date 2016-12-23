@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 @media (max-width: 800px) {
     .typer {
@@ -69,6 +70,7 @@ p {
 
 #site_wrapper {
   overflow-x: hidden;
+  color: #30a2e4;
 }
 
 .typed-cursor{

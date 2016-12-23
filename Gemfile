@@ -23,11 +23,13 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-gem 'twilio-ruby'
+gem 'sms-easy'
 
-gem 'stripe'
+gem 'httparty'
 
 gem 'bootstrap-sass'
+
+gem 'font-awesome-rails'
 
 gem 'rails_12factor', group: :production
 
